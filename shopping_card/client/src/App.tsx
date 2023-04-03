@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
 import {Routes,Route} from 'react-router-dom'
 import { AddForm } from './components/AddForm/AddForm';
 import ProductsCard  from './components/ProductsCard/ProductsCard';
+import { AppProvider } from '@shopify/polaris';
+import translations from '@shopify/polaris/locales/en.json';
 
 function App() {
   return(
-    <div className='app'>
-      <Routes>
-        <Route path='/add' Component={AddForm} />
-        <Route path='/'Component={ProductsCard}/>
-      </Routes>
-    </div>
+    <AppProvider i18n={translations}>
+      <div className='app'>
+        <Routes>
+          <Route path='/add' Component={AddForm} />
+          <Route path='/'Component={ProductsCard}/>
+        </Routes>
+      </div>
+    </AppProvider>
   );
 }
 

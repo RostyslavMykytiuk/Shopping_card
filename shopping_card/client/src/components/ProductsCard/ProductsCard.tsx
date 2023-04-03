@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Button} from '@shopify/polaris';
 import Item from '../../models/ItemModel'
 import './ProductCard.css'
 import ProductItem from '../Item/Item'
@@ -127,7 +128,7 @@ const ProductsCard = () => {
         </select>
         Currency rate:{currencyRateResult}
         <br />
-        <button onClick={saveReceipt}>Save</button>
+        <Button  onClick={saveReceipt}>Save</Button>
     </div>
   )
 }
