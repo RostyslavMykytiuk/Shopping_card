@@ -1,0 +1,23 @@
+
+.form_container{
+    max-width:400px;
+    margin:3rem auto;
+    border:1px solid silver;
+    border-radius:15px;
+    padding:1rem 2rem;
+    background-color: white;
+}
+.form_container button{
+    width:100%;
+}
+.heading{
+    font-size:3rem;
+    font-weight:bold;
+    text-align: center;
+    margin:2rem 0 3rem 0;
+}
+.form_container button:hover{
+    background:rgb(12, 12, 213);
+    color:white;
+    transition:all 0.5s ease-out;
+}

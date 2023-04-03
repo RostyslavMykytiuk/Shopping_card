@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router-dom'
 import {
   add_item
 } from "../../slices/ItemSlice"
-import { Form, FormLayout, TextField , Select  } from '@shopify/polaris'
+import { Form, FormLayout, TextField , Select, Button, Heading  } from '@shopify/polaris'
 import '@shopify/polaris/build/esm/styles.css'
+import "./AddForm.css"
 
 export const AddForm = () => {
   // custom validator to validate quantity and price
@@ -58,8 +59,11 @@ export const AddForm = () => {
   // pushing created Item to state
   
   return (
+    
     <Form onSubmit={submit}>
-        <FormLayout>
+      <div className="form_container">
+        <h1 className='heading'>Add Item</h1>
+        <FormLayout >
           <TextField 
             {...fields.title}
             autoComplete='off'
@@ -68,11 +72,10 @@ export const AddForm = () => {
             name="title" 
             id="product_title" 
           />
-          <br />
           <TextField
             {...fields.price}
             autoComplete='off'
-            type="text"
+            type="number"
             name="price" 
             label='Product price'
             id="product_price" 
@@ -93,8 +96,10 @@ export const AddForm = () => {
             name="currency" 
             id="product_currency"/>
           
-          <button type="submit">Add product</button>
+          <Button   submit>Add product</Button>
         </FormLayout>
+      </div>
     </Form>
+    
   )
 }

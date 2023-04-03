@@ -1,0 +1,32 @@
+.card_container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+}
+.card_container>div{
+    max-width:1200px;
+}
+.products_info th{
+    width:200px;
+    font-size:1.2rem;
+}
+.align_right_container{
+    text-align: right;
+    margin-top:2rem;
+}
+.save_receipt_button>
+button{
+    margin-top:4rem;
+}
+.total_price_heading{
+    font-size:1.1rem;
+    font-weight:bold;
+    color:black;
+    margin-top: 2rem;
+}
+.card_container button:hover{
+    background:rgb(12, 12, 213);
+  color:white;
+  transition:all 0.5s ease-out;
+}

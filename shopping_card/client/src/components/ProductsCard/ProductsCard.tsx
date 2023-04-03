@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Button} from '@shopify/polaris';
+import {AlphaCard, Box, Button} from '@shopify/polaris';
 import Item from '../../models/ItemModel'
 import './ProductCard.css'
 import ProductItem from '../Item/Item'
@@ -21,39 +21,45 @@ const ProductsCard = () => {
 
   const saveReceipt = async () => {
     //creating date to use as receipt key 
-    const arr = []
-    const date = new Date()
-    let year = date.getFullYear()
-    arr.push(year)
-    let month = date.getMonth() + 1
-    arr.push(month)
-    let day = date.getDate()
-    arr.push(day)
-    let hours = date.getHours()
-    arr.push(hours)
-    let minutes = date.getMinutes()
-    arr.push(minutes)
-    let seconds = date.getSeconds()
-    arr.push(seconds)
-    const currentDate = arr.join('-')
+    if(items.length === 0){
+      alert("Please add items to save receipt")
+    }
+    else{
+      const arr = []
+      const date = new Date()
+      let year = date.getFullYear()
+      arr.push(year)
+      let month = date.getMonth() + 1
+      arr.push(month)
+      let day = date.getDate()
+      arr.push(day)
+      let hours = date.getHours()
+      arr.push(hours)
+      let minutes = date.getMinutes()
+      arr.push(minutes)
+      let seconds = date.getSeconds()
+      arr.push(seconds)
+      const currentDate = arr.join('-')
 
-    //creating object to post on server
+      //creating object to post on server
 
-    const receiptData = JSON.stringify({
-        [currentDate]:{
-          totalprice:totalprice,
-          currency:paymentCurrency,
-          items:[...items]
-        }
-    })
-    // post object to server
-    fetch('http://localhost:3001/receipts',{
-      method:"POST",
-      headers: {
-        "Content-type": "application/json",
-      } ,
-      body:receiptData
-    },)
+      const receiptData = JSON.stringify({
+          [currentDate]:{
+            totalprice:totalprice,
+            currency:paymentCurrency,
+            items:[...items]
+          }
+      })
+      // post object to server
+      fetch('http://localhost:3001/receipts',{
+        method:"POST",
+        headers: {
+          "Content-type": "application/json",
+        } ,
+        body:receiptData
+      },)
+    }
+    
   }
 
   // useEffect used to get rate from server and 
@@ -88,8 +94,9 @@ const ProductsCard = () => {
   },[items,paymentCurrency])
 
   return (
-    <div className='products_card_container'>
-        <table className="products_info">
+    <div className="card_container">
+    <AlphaCard>
+        <table className="products_info" >
            <thead>
               <tr>
                 <th>Product name</th>
@@ -114,21 +121,26 @@ const ProductsCard = () => {
               }
            </tbody>
         </table>
-        <button onClick={()=> navigate("/add")}>Add items</button>
-        <br />
-        Total price : {totalprice}
-        <br />
-        Payment currency :
-        <select 
-              name="select_currency" 
-              defaultValue={paymentCurrency} 
-              onChange={(event)=>{setPaymentCurrency(event.target.value)}} >
-                <option  value="USD">USD</option>
-                <option value="EUR">EUR</option>
-        </select>
-        Currency rate:{currencyRateResult}
-        <br />
-        <Button  onClick={saveReceipt}>Save</Button>
+        <div className="align_right_container">
+          <Button onClick={()=> navigate("/add")}>Add items</Button>
+          <br/>
+          <h3 className='total_price_heading'>Total price : {totalprice} {paymentCurrency}</h3> 
+          <br />
+          Payment currency :
+          <select 
+                name="select_currency" 
+                defaultValue={paymentCurrency} 
+                onChange={(event)=>{setPaymentCurrency(event.target.value)}} >
+                  <option  value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+          </select>
+          <br />
+          <div className="save_receipt_button">
+            <Button  onClick={saveReceipt}>Save</Button>
+          </div>
+        </div>
+       
+    </AlphaCard>
     </div>
   )
 }

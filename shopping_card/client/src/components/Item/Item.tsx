@@ -1,4 +1,4 @@
-import React from 'react'
+import './Item.css'
 import Item from '../../models/ItemModel'
 
 
