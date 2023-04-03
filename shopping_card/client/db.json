@@ -1,0 +1,49 @@
+{
+  "receipts": [
+    {
+      "2023-4-3-10-23-10": {
+        "totalprice": 71.63,
+        "currency": "EUR",
+        "items": [
+          {
+            "title": "banana",
+            "price": "6",
+            "quantity": "7",
+            "currency": "EUR"
+          },
+          {
+            "title": "orange",
+            "price": "4",
+            "quantity": "8",
+            "currency": "USD"
+          }
+        ]
+      },
+      "id": 1
+    },
+    {
+      "2023-4-3-10-35-34": {
+        "totalprice": 85.68,
+        "currency": "USD",
+        "items": [
+          {
+            "title": "coke",
+            "price": "4.7",
+            "quantity": "9",
+            "currency": "EUR"
+          },
+          {
+            "title": "burger",
+            "price": "5",
+            "quantity": "8",
+            "currency": "USD"
+          }
+        ]
+      },
+      "id": 2
+    }
+  ],
+  "rate": {
+    "rate": 1.08
+  }
+}
