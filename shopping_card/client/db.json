@@ -1,130 +1,6 @@
 {
   "receipts": [
     {
-      "2023-4-3-10-23-10": {
-        "totalprice": 71.63,
-        "currency": "EUR",
-        "items": [
-          {
-            "title": "banana",
-            "price": "6",
-            "quantity": "7",
-            "currency": "EUR"
-          },
-          {
-            "title": "orange",
-            "price": "4",
-            "quantity": "8",
-            "currency": "USD"
-          }
-        ]
-      },
-      "id": 1
-    },
-    {
-      "2023-4-3-10-35-34": {
-        "totalprice": 85.68,
-        "currency": "USD",
-        "items": [
-          {
-            "title": "coke",
-            "price": "4.7",
-            "quantity": "9",
-            "currency": "EUR"
-          },
-          {
-            "title": "burger",
-            "price": "5",
-            "quantity": "8",
-            "currency": "USD"
-          }
-        ]
-      },
-      "id": 2
-    },
-    {
-      "2023-4-3-11-3-33": {
-        "totalprice": 0,
-        "currency": "USD",
-        "items": []
-      },
-      "id": 3
-    },
-    {
-      "2023-4-3-11-3-45": {
-        "totalprice": 0,
-        "currency": "USD",
-        "items": []
-      },
-      "id": 4
-    },
-    {
-      "2023-4-3-12-56-57": {
-        "totalprice": 176,
-        "currency": "USD",
-        "items": [
-          {
-            "title": "reythrtrt",
-            "price": "56",
-            "quantity": "2",
-            "currency": "USD"
-          },
-          {
-            "title": "sffssdf",
-            "price": "32",
-            "quantity": "2",
-            "currency": "USD"
-          }
-        ]
-      },
-      "id": 5
-    },
-    {
-      "2023-4-3-14-5-35": {
-        "totalprice": 0,
-        "currency": "USD",
-        "items": []
-      },
-      "id": 6
-    },
-    {
-      "2023-4-3-14-7-2": {
-        "totalprice": 0,
-        "currency": "USD",
-        "items": []
-      },
-      "id": 7
-    },
-    {
-      "2023-4-3-14-7-5": {
-        "totalprice": 0,
-        "currency": "USD",
-        "items": []
-      },
-      "id": 8
-    },
-    {
-      "2023-4-4-9-46-57": {
-        "totalprice": 91.96,
-        "currency": "USD",
-        "items": [
-          {
-            "title": "banana",
-            "price": "9",
-            "quantity": "7",
-            "currency": "EUR"
-          },
-          {
-            "title": "orange",
-            "price": "5.98",
-            "quantity": "4",
-            "currency": "USD"
-          }
-        ]
-      },
-      "id": 9
-    },
-    {
       "date": "2023-4-4 9:58:13",
       "totalprice": 21,
       "currency": "USD",
@@ -205,6 +81,66 @@
         }
       ],
       "id": 14
+    },
+    {
+      "date": "2023-4-4 11:29:29",
+      "totalprice": 651.6,
+      "currency": "USD",
+      "items": [
+        {
+          "title": "gdgdgdf",
+          "price": "45",
+          "quantity": "8",
+          "currency": "USD"
+        },
+        {
+          "title": "fddfhd",
+          "price": "45",
+          "quantity": "6",
+          "currency": "EUR"
+        }
+      ],
+      "id": 15
+    },
+    {
+      "date": "2023-4-4 11:32:48",
+      "totalprice": 504.24,
+      "currency": "USD",
+      "items": [
+        {
+          "title": "dfbfbdfbd",
+          "price": "34",
+          "quantity": "6",
+          "currency": "USD"
+        },
+        {
+          "title": "dfbdf",
+          "price": "4",
+          "quantity": "7",
+          "currency": "EUR"
+        },
+        {
+          "title": "hddhfhd",
+          "price": "45",
+          "quantity": "6",
+          "currency": "USD"
+        }
+      ],
+      "id": 16
+    },
+    {
+      "date": "2023-4-4 11:33:58",
+      "totalprice": 115,
+      "currency": "USD",
+      "items": [
+        {
+          "title": "gdfdfgdfh",
+          "price": "23",
+          "quantity": "5",
+          "currency": "USD"
+        }
+      ],
+      "id": 17
     }
   ],
   "rate": {

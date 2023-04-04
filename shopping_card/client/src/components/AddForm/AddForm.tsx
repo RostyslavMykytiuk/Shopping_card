@@ -74,7 +74,7 @@ export const AddForm = () => {
   
   return (
     
-    <Form onSubmit={submit}>
+    <Form onSubmit={submit} data-testid="test-form">
       <div className="form_container">
         <h1 className='heading'>Add Item</h1>
         <FormLayout >
