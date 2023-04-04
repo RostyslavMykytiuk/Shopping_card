@@ -1,18 +1,17 @@
-import React from 'react'
+
 import { useForm , useField,notEmpty,lengthMoreThan,lengthLessThan } from '@shopify/react-form'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '../../store/hooks'
 import { useNavigate } from 'react-router-dom'
 import {
   add_item
 } from "../../slices/ItemSlice"
-import { Form, FormLayout, TextField , Select, Button, Heading  } from '@shopify/polaris'
+import { Form, FormLayout, TextField , Select, Button  } from '@shopify/polaris'
 import '@shopify/polaris/build/esm/styles.css'
 import "./AddForm.css"
+import Item from '../../models/ItemModel'
+
 
 export const AddForm = () => {
-  // custom validator to validate quantity and price
-  //const isNaturalNumber = (value:number) => value >= 0
-
   
   const options = [
     {label:"USD", value:"USD"},
@@ -31,14 +30,29 @@ export const AddForm = () => {
       }),
       price:useField({
         value:'',
-        validates:[
-          notEmpty('Price is required')
+        validates : [
+          notEmpty("Product price is required"),
+          function isNumber(value:string){
+            if(parseFloat(value)<=0){
+              return "Price should be higher than 0"
+            }
+          }
         ]
       }),
       quantity:useField({
         value:'',
         validates:[
-          notEmpty('Product quantity is required')
+          notEmpty('Product quantity is required'),
+          function isInteger(value:string){
+            if(parseFloat(value) - parseInt(value)!==0){
+              return "Quantity should be integer value"
+            }
+          },
+          function isNumber(value:string){
+            if(parseFloat(value)<=0){
+              return "Quantity should be higher than 0"
+            }
+          }
         ]
       }),
       currency:useField({
@@ -54,7 +68,7 @@ export const AddForm = () => {
       navigate("/")
     }
   })
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
   // pushing created Item to state
   

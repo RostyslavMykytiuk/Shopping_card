@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import {AlphaCard, Box, Button} from '@shopify/polaris';
+import {AlphaCard, Button} from '@shopify/polaris';
 import Item from '../../models/ItemModel'
 import './ProductCard.css'
 import ProductItem from '../Item/Item'
-import { useSelector  } from 'react-redux'
+import { useAppSelector } from '../../store/hooks';
 import {  useNavigate } from 'react-router-dom'
 
 
 const ProductsCard = () => {
   // getting items from redux state
-  const items = useSelector((state:any)=> state.items.items)
+  const items = useAppSelector((state)=> state.items.items)
 
   const [totalprice , setTotalPrice] = useState(0)
 
@@ -20,35 +20,22 @@ const ProductsCard = () => {
   const navigate = useNavigate()
 
   const saveReceipt = async () => {
-    //creating date to use as receipt key 
     if(items.length === 0){
       alert("Please add items to save receipt")
     }
     else{
-      const arr = []
-      const date = new Date()
-      let year = date.getFullYear()
-      arr.push(year)
-      let month = date.getMonth() + 1
-      arr.push(month)
-      let day = date.getDate()
-      arr.push(day)
-      let hours = date.getHours()
-      arr.push(hours)
-      let minutes = date.getMinutes()
-      arr.push(minutes)
-      let seconds = date.getSeconds()
-      arr.push(seconds)
-      const currentDate = arr.join('-')
-
+      //creating receipt date
+      const today = new Date()
+      let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      const currentDate = date +' '+time
       //creating object to post on server
 
-      const receiptData = JSON.stringify({
-          [currentDate]:{
-            totalprice:totalprice,
-            currency:paymentCurrency,
-            items:[...items]
-          }
+      const receiptData = JSON.stringify({      
+          date:currentDate,
+          totalprice:totalprice,
+          currency:paymentCurrency,
+          items:[...items]
       })
       // post object to server
       fetch('http://localhost:3001/receipts',{

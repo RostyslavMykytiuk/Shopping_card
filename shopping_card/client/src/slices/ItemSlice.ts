@@ -1,18 +1,20 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 
-interface Item {
+type Item = {
     title:string;
     price:number;
     quantity:number;
     currency:string;
 }
 
+type ItemsState = {
+    items: Item[]
+}
+
 // initial state for items
-const initialState:any = {
-    items:[
-        
-    ]
+const initialState:ItemsState = {
+    items:[]
 } 
 
 export const ItemsSlice = createSlice({

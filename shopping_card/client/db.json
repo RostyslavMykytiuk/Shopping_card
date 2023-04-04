@@ -102,6 +102,109 @@
         "items": []
       },
       "id": 8
+    },
+    {
+      "2023-4-4-9-46-57": {
+        "totalprice": 91.96,
+        "currency": "USD",
+        "items": [
+          {
+            "title": "banana",
+            "price": "9",
+            "quantity": "7",
+            "currency": "EUR"
+          },
+          {
+            "title": "orange",
+            "price": "5.98",
+            "quantity": "4",
+            "currency": "USD"
+          }
+        ]
+      },
+      "id": 9
+    },
+    {
+      "date": "2023-4-4 9:58:13",
+      "totalprice": 21,
+      "currency": "USD",
+      "items": [
+        {
+          "title": "coke",
+          "price": "3",
+          "quantity": "7",
+          "currency": "USD"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "date": "2023-4-4 10:4:31",
+      "totalprice": 423.36,
+      "currency": "USD",
+      "items": [
+        {
+          "title": "redbull",
+          "price": "98",
+          "quantity": "4",
+          "currency": "EUR"
+        }
+      ],
+      "id": 11
+    },
+    {
+      "date": "2023-4-4 10:21:42",
+      "totalprice": 208.33,
+      "currency": "EUR",
+      "items": [
+        {
+          "title": "rtrttrtr",
+          "price": "45",
+          "quantity": "5",
+          "currency": "USD"
+        }
+      ],
+      "id": 12
+    },
+    {
+      "date": "2023-4-4 10:31:4",
+      "totalprice": 70.24,
+      "currency": "USD",
+      "items": [
+        {
+          "title": "trtrtrtr",
+          "price": "8",
+          "quantity": "6",
+          "currency": "EUR"
+        },
+        {
+          "title": "fhghgh",
+          "price": "4.6",
+          "quantity": "4",
+          "currency": "USD"
+        }
+      ],
+      "id": 13
+    },
+    {
+      "date": "2023-4-4 10:37:43",
+      "totalprice": 127.8,
+      "currency": "USD",
+      "items": [
+        {
+          "title": "gfhgfhgfh",
+          "price": "9",
+          "quantity": "10",
+          "currency": "USD"
+        },
+        {
+          "title": "fhhtfhfg",
+          "price": "5",
+          "quantity": "7",
+          "currency": "EUR"
+        }
+      ],
+      "id": 14
     }
   ],
   "rate": {
